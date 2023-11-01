@@ -17,9 +17,20 @@ def listOfGasStations():
     gasStationsNearby = random.choice(gasStations)
     return gasStationsNearby
 
-
 #function will call the gasLevelGauge to determine gas level  and then find a close gas station if low
 def gasLevelAlert():
     milesToGasStationsLow = round(random.uniform(1, 25), 1)
     milesToGasStationsQuarter = round(random.uniform(25.1, 50), 1)
-    
+    gasLevelGauge()
+    if gasLevelGauge == "Empty Tank":
+        print("***WARNING - YOU ARE ON EMPTY***")
+        sleep(1.5)
+        print("Calling Triple AAA")
+    elif gasLevelGauge == "Low Tank":
+        print("your gas tank is extremely low, checking google maps for the closest gas station")
+        sleep(1.5)
+        print("The closest gas statoin is", listOfGasStations(), "Which is",milesToGasStationsLow, "miles away.")
+
+
+gasLevelAlert()
+
