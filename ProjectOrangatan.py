@@ -1,4 +1,3 @@
-
 """
 Our Welcome Screen will start our program letting
 drivers know that the Infotech Center 2023 is loading
